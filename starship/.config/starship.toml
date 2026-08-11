@@ -1,0 +1,63 @@
+# Get an empty line between prompts for readability
+add_newline = true
+
+# Sets up a two-line prompt
+format = """
+$time, on $directory$git_branch$git_status
+$username in $hostname$sudo$battery $character"""
+
+[os]
+disabled = false
+format = "[$symbol ]($style)"
+
+[username]
+show_always = true
+style_user = "bold green"
+style_root = "bold red"
+format = '[$user]($style)'
+
+[hostname]
+ssh_only = false
+style = "bold yellow"
+format = '[$hostname]($style)'
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncate_to_repo = true
+format = '[$path]($style)'
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = ", [$symbol$branch]($style) branch"
+
+[git_status]
+style = "bold red"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+[cmd_duration]
+min_time = 2000
+format = "took [$duration]($style) "
+
+[character]
+success_symbol = "[::](bold green)"
+error_symbol = "[::](bold red)"
+
+[battery]
+format = " at [$symbol$percentage]($style) "
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+[sudo]
+disabled = false
+style = "bold red"
+format = ' with [admin rights]($style)'
+
+[time]
+disabled = false
+style = "bold cyan"
+time_format = "%H:%M"
+format = '[$time]($style)'
