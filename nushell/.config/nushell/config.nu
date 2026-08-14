@@ -14,4 +14,6 @@ let current_date = (date now | format date "%d/%m/%Y")
 let current_uptime = (sys host).uptime
 let current_user = $env.USER
 
+source $"($nu.cache-dir)/carapace.nu"
+
 print $"($current_date), current uptime is ($current_uptime) and logged user is ($current_user)"
