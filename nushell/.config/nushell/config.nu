@@ -5,9 +5,10 @@ $env.config.datetime_format = {
     normal: '%d/%m/%Y %H:%M:%S'
 }
 
+alias chafa = chafa -f kitty --passthrough=tmux
+
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
-
 $env.STARSHIP_LOG = "error"
 
 let current_date = (date now | format date "%d/%m/%Y")
